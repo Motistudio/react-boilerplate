@@ -6,6 +6,6 @@ import './App.scss'
 
 export default class App extends React.Component {
   render () {
-    return (<h4>{'works!'}</h4>)
+    return (<h4>{'React boilerplate'}</h4>)
   }
 }
