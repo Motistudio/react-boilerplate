@@ -3,6 +3,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const webpack = require('webpack')
 
 /**
@@ -77,6 +78,7 @@ if (String(process.env.NODE_ENV).toLowerCase().startsWith('dev')) {
    * Prod plugins
    */
   plugins = plugins.concat([
+    new CleanWebpackPlugin('dist'),
     new ExtractTextPlugin({
       filename: '[name].[contenthash].css'
     })
@@ -101,5 +103,10 @@ module.exports = {
   module: {
     rules
   },
-  plugins
+  plugins,
+  devtool: 'inline-source-map',
+  devServer: {
+    contentBase: './dist',
+    hot: true
+  }
 }

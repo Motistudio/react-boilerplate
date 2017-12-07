@@ -2,11 +2,13 @@
   "name": "tradex-frontend",
   "version": "1.0.0",
   "description": "frontend for tradex",
-  "keywords": ["trade"],
+  "keywords": [
+    "trade"
+  ],
   "main": "index.js",
   "scripts": {
     "build": "npm run env NODE_ENV=production && webpack",
-    "start": "webpack-dev-server",
+    "start": "npm run env NODE_ENV=development && webpack-dev-server",
     "test": "test"
   },
   "author": "Moti Shriki",
@@ -28,6 +30,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.17",
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^2.30.1",
